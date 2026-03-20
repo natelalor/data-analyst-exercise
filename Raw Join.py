@@ -20,6 +20,19 @@ def main():
     # returns NaN if unsufficient status
     train_1['resolved_status'] = train_1['MPTC User ID'].map(user_id_to_status_map)
 
+    # if user id is found in train 1, update status FULFILLED or UNFULFILLED
+    # matched is a column representing sufficient status for train_1 IDs
+    matched = train_1['resolved_status'].notna()
+
+    # then locates instances where matched = true, then update to new status via train_2
+    train_1.loc[matched, 'UDF3 Note'] = train_1.loc[matched, 'resolved_status']
+
+    # cleanup
+    train_1.drop(columns=['resolved_status'], inplace=True)
+
+    # save into separate file that is sucessfully both train_1 joined with viable train_2 content
+    train_1.to_csv('/datasets/master_output.csv', index=False)
+    print("\nScript successful - saved master_output.csv")
 
 # completion status signifier - helper function primarily for train_2 with additional cleaning - missing FULFILLED keyword will produce unfulfillment for further manual inquiry
 def resolve_status(statuses):
