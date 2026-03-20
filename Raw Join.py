@@ -4,8 +4,8 @@ import pandas as pd
 def main():
 
     # import data
-    train_1 = pd.read_excel("/mnt/user-data/uploads/TRAIN_1.xlsx", dtype=str)
-    train_2 = pd.read_csv("/mnt/user-data/uploads/TRAIN_2.csv", dtype=str)
+    train_1 = pd.read_excel("datasets/TRAIN_1.xlsx", dtype=str)
+    train_2 = pd.read_csv("datasets/TRAIN_2.csv", dtype=str)
 
     # initial cleaning & standardization - preparing join
     train_1["MPTC User ID"] = train_1["MPTC User ID"].str.strip()
