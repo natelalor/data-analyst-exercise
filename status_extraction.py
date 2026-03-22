@@ -1,8 +1,11 @@
-import pandas as pd
-
-# This script reads TRAIN_1 and TRAIN_2, resolves the requirement completion
+# ------------------------------------
+# This program reads TRAIN_1 and TRAIN_2, resolves the requirement completion
 # status for each user, and updates TRAIN_1's UDF3 Note accordingly.
 # The final output is saved as master_output.csv.
+# ------------------------------------
+
+# import necessary library for data manipulation
+import pandas as pd
 
 # a helper function to assist with status mapping
 def resolve_status(statuses):

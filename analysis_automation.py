@@ -1,9 +1,12 @@
+# ------------------------------------
+# This program allows user to choose 2 corresponding files and it will join them together based on MPTC Training fulfillment (via UD). Currently supports .xlsx and .csv filetypes. The final output saved locally as master_output.csv
+# ------------------------------------
+
+# import necessary libraries for data manipulation
 import pandas as pd
 import tkinter as tk
 from tkinter import filedialog
 import os
-
-# This program allows user to choose 2 corresponding files and it will join them together based on MPTC Training fulfillment (via UD). Currently supports .xlsx and .csv filetypes. The final output saved locally as master_output.csv
 
 # a helper function to assist with status mapping
 def resolve_status(statuses):
@@ -58,7 +61,7 @@ def main():
     }
 
     # update UDF3 Note only where a match was found, using standardized labels as seen above.
-    # rows with no match are untouched
+    # rows with no match are untouched for preservation
     matched = train_1['resolved_status'].notna()
     train_1.loc[matched, 'UDF3 Note'] = train_1.loc[matched, 'resolved_status'].map(status_labels)
 
