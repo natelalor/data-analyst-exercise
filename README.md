@@ -7,4 +7,5 @@ The file status_extraction.py provides a solution for Parts 1 & 2 of this exerci
 There is also analysis_automation.py, offering an automated version requested in Part 3 of the analysis exercise. This file is similar to the python file mentioned earlier, while using additional python libraries to better cater towards a user-friendly approach to implementing these files to provide scalable solutions.
 
 Read the complete guideline and documentation: [Here](https://docs.google.com/document/d/1bTqla_Fm81TMnyDGvvfeB3tRKyl8AOG_hw-iHUckhAw/edit?usp=sharing)
+
 _Project Timeline: March 17 - March 23, 2026_
